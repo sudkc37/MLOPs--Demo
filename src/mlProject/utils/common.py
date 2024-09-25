@@ -1,7 +1,7 @@
-from mlproject import logger
-from json
+from mlProject import logger
+import json
 import joblib
-from ensuer import ensure_annotations
+from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
@@ -25,8 +25,8 @@ def create_directories(path_to_directories:list, verbose=True):
         if verbose:
             logger.info(f"created directory at: {path}")
 
-@ansure_annotations
-def save_json(path:Path, data:dict):
+@ensure_annotations
+def save_json(path: Path, data: dict):
     with open(path, "w") as f:
         json.dump(data, f, indent=4)
     
@@ -40,7 +40,7 @@ def load_json(path: Path) -> ConfigBox:
     logger.info(f"json file loaded succesfully from: {path}")
     return ConfigBox(content)
 
-@ensuer_annotations
+@ensure_annotations
 def save_bin(data: Any, path: Path):
     joblib.dump(value=data, filename=path)
     logger.info(f"binary file saved at: {path}")
@@ -52,7 +52,7 @@ def load_bin(path: Path) -> Any:
     return data
 
 @ensure_annotations 
-def get_size(path: path) -> str:
-    size_in_kb = round(os.path.getsize(path)/1024)
+def get_size(path: Path) -> str:
+    size_in_kb = round(os.path.getsize(path) / 1024)
     return f"~{size_in_kb} KB"
     
