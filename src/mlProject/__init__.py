@@ -1,3 +1,4 @@
+#Logging streams to handel all logs and stream
 import os
 import sys
 import logging
