@@ -4,7 +4,7 @@ artifacts_root: artifacts
 data_ingestion:
   root_dir: artifacts/data_ingestion
   source_URL: https://github.com/sudkc37/Data/blob/d8bcbd823c5c0111c5f3498d971ab501e4d2a817/winequality-red.zip
-  local_data_file: artifacts/data_ingestion/data.zip
+  local_data_file: artifacts/data_ingestion/red.zip
   unzip_dir: artifacts/data_ingestion
 
 
